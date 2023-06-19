@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Global from "../Global";
 import axios from "axios";
+import Tiempo from "./Tiempo";
 
-
-const Formulario = ()=>{
+const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState([]);
     const url = Global.url 
@@ -13,7 +13,10 @@ const Formulario = ()=>{
     async function fetchData() {
         axios.get(url+city+key).then((res) => {
             setData(res.data);
-          });
+          })
+        //   .catch(err => {
+          
+        //   });
       }
 
 
@@ -26,9 +29,8 @@ const Formulario = ()=>{
         } else {
            city = city.replace('madrid', ciudad)
            fetchData()
-           console.log(data)
         }
-
+        console.log(data)
     }
  
     const handleChange = (e) =>{
@@ -43,15 +45,15 @@ const Formulario = ()=>{
     }
 
     useEffect(()=>{
-        fetchData() 
-    })
+        fetchData()
+    },[])
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="ciudad">Ciudad</label>
-                    <input id='ciudad' placeholder="Ciudad" value={ciudad} onChange={ (e) => setCiudad(e.target.value) } onBlur={handleChange}></input>
+                    <input id='ciudad' placeholder="Ciudad" value={ciudad} onChange={ (e) => setCiudad(e.target.value) } onBlur={handleSubmit}></input>
                 </div>
                 <input
                     type="submit"
@@ -59,7 +61,7 @@ const Formulario = ()=>{
                 />
             </form> 
             
-            
+           <Tiempo data={data} />
         </div>
     )
 }

@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+
 import Global from '../Global';
 import './App.css';
-import Tiempo from '../Components/Tiempo';
+
+import Formulario from '../Components/Formulario';
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <h1> Weather </h1>
-      <Tiempo />
+      <Formulario />
     </div>
   );
 }
