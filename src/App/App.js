@@ -1,19 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Global from '../Global';
 import './App.css';
+import Tiempo from '../Components/Tiempo';
 
 
 function App() {
-  this.url = Global.weather
-  this.key = Global.key
-  let url = this.url + this.key
+ const [ciudad, setCiudad] = ('')
 
-  // useEffect(()=>{
-  //   fetch(url)
-  // })
   return (
     <div className="App">
       <h1> Weather </h1>
+      <Tiempo />
     </div>
   );
 }
