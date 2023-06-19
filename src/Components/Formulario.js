@@ -5,20 +5,20 @@ import Tiempo from "./Tiempo";
 
 const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
     const url = Global.url 
-    let city = '?q=madrid&lang=es&key='
+    const apiKey = '&lang=es&key='
 
-    
+
     const key = Global.ApiKey
   
-    async function fetchData() {
-        axios.get(url+city+key).then((res) => {
+    async function fetchData(ciudad) {
+        axios.get(url+ciudad+apiKey+key).then((res) => {
             setData(res.data);
           })
-        //   .catch(err => {
-          
-        //   });
+          .catch(err => {
+            console.log('')
+          });
       }
 
 
@@ -29,10 +29,9 @@ const Formulario = () =>{
         if([ciudad].includes('')){
             // ! Error
         } else {
-           city = city.replace('madrid', ciudad)
-           fetchData()
+           fetchData(ciudad)
         }
-        console.log(data)
+
     }
  
     const handleChange = (e) =>{
@@ -41,13 +40,14 @@ const Formulario = () =>{
         if([ciudad].includes('')){
             // ! Error
         } else {
-           fetchData()
+        //    fetchData()
         }
        
     }
 
     useEffect(()=>{
-        fetchData()
+
+        fetchData('madrid')
     },[])
 
     return(
@@ -63,7 +63,8 @@ const Formulario = () =>{
                 />
             </form> 
             
-           <Tiempo data={data} />
+                <Tiempo data={data} />
+            
         </div>
     )
 }
