@@ -8,6 +8,8 @@ const Formulario = () =>{
     const [data, setData] = useState([]);
     const url = Global.url 
     let city = '?q=madrid&lang=es&key='
+
+    
     const key = Global.ApiKey
   
     async function fetchData() {
