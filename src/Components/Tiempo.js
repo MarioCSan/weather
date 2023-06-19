@@ -1,28 +1,65 @@
 import { useState, useEffect } from "react";
 import Global from "../Global";
+import axios from "axios";
 
 
 const Tiempo = ()=>{
-    const [data, setData] = useState(null);
-    const url = Global.url + '?q=madrid&lang=es&key='
+    const [ciudad, setCiudad] = useState('')
+    const [data, setData] = useState([]);
+    const url = Global.url 
+    let city = '?q=madrid&lang=es&key='
     const key = Global.ApiKey
   
+    async function fetchData() {
+        axios.get(url+city+key).then((res) => {
+            setData(res.data);
+          });
+      }
+
+
   
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        if([ciudad].includes('')){
+            // ! Error
+        } else {
+           city = city.replace('madrid', ciudad)
+           fetchData()
+           console.log(data)
+        }
+
+    }
+ 
+    const handleChange = (e) =>{
+        e.preventDefault();
+
+        if([ciudad].includes('')){
+            // ! Error
+        } else {
+           fetchData()
+        }
+       
+    }
+
     useEffect(()=>{
-      fetch(url+key)
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => console.error(error));
+        fetchData() 
     })
 
     return(
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label></label>
-                    <input></input>
+                    <label htmlFor="ciudad">Ciudad</label>
+                    <input id='ciudad' placeholder="Ciudad" value={ciudad} onChange={ (e) => setCiudad(e.target.value) } onBlur={handleChange}></input>
                 </div>
+                <input
+                    type="submit"
+                    className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
+                />
             </form> 
+            
+            
         </div>
     )
 }
