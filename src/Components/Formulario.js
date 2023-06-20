@@ -8,9 +8,6 @@ const Formulario = () =>{
     const [data, setData] = useState({});
     const url = Global.forecast 
     const endUrl = '&days=3&lang=es&aqi=no&alerts=no'
-
-
-    const key = Global.ApiKey
   
     async function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
@@ -34,16 +31,16 @@ const Formulario = () =>{
 
     }
  
-    const handleChange = (e) =>{
-        e.preventDefault();
+    // const handleChange = (e) =>{
+    //     e.preventDefault();
 
-        if([ciudad].includes('')){
-            // ! Error
-        } else {
-        //    fetchData()
-        }
+    //     if([ciudad].includes('')){
+    //         // ! Error
+    //     } else {
+    //     //    fetchData()
+    //     }
        
-    }
+    // }
 
     useEffect(()=>{
 
