@@ -7,7 +7,7 @@ const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState({});
     const url = Global.forecast 
-    const endUrl = '&days=3&aqi=no&alerts=no'
+    const endUrl = '&days=3&lang=es&aqi=no&alerts=no'
 
 
     const key = Global.ApiKey
