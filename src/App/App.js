@@ -9,8 +9,8 @@ function App() {
  const [ciudad, setCiudad] = ('')
 
   return (
-    <div className="App">
-      <h1> Weather </h1>
+    <div className='text-center'>
+      <h1 className='font-extrabold tracking-wider'>Weather</h1>
       <Formulario />
     </div>
   );
