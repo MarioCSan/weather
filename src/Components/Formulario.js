@@ -6,14 +6,14 @@ import Tiempo from "./Tiempo";
 const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState({});
-    const url = Global.url 
-    const apiKey = '&lang=es&key='
+    const url = Global.forecast 
+    const endUrl = '&days=3&aqi=no&alerts=no'
 
 
     const key = Global.ApiKey
   
     async function fetchData(ciudad) {
-        axios.get(url+ciudad+apiKey+key).then((res) => {
+        axios.get(url+ciudad+endUrl).then((res) => {
             setData(res.data);
           })
           .catch(err => {
