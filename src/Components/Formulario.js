@@ -7,11 +7,12 @@ const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState({});
     const url = Global.forecast 
-    const endUrl = '&days=3&lang=es&aqi=no&alerts=no'
+    const endUrl = '&days=4&lang=es&aqi=no&alerts=no'
   
     async function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
             setData(res.data);
+            console.log(data)
           })
           .catch(err => {
             console.log('')
@@ -50,7 +51,7 @@ const Formulario = () =>{
     return(
         <div className="bg-sky-200">
             <div className="p-10 mb-2">
-                <h1 className='font-extrabold tracking-wider'>Weather</h1>
+                <h1 className='font-extrabold tracking-widest text-2xl text-zinc-800'>Weather</h1>
             </div>
             <div>
                 <form onSubmit={handleSubmit}>
