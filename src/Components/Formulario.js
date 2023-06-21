@@ -48,13 +48,16 @@ const Formulario = () =>{
     },[])
 
     return(
-        <div>
+        <div className="bg-sky-200">
+            <div className="p-10 mb-2">
+                <h1 className='font-extrabold tracking-wider'>Weather</h1>
+            </div>
             <div>
                 <form onSubmit={handleSubmit}>
                     <div className="flex place-content-center">
                    
                         <input id='ciudad' placeholder="Ciudad" 
-                                className="placeholder:italic placeholder:text-slate-400 block bg-white w-1/5 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
+                                className="placeholder:italic placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
                                             focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv items-center"
                                 value={ciudad} onChange={ (e) => setCiudad(e.target.value) } onBlur={handleSubmit}></input>
                     </div>
@@ -64,7 +67,7 @@ const Formulario = () =>{
                     />
                 </form> 
             </div>
-            <div>    
+            <div className="bg-sky-200">    
                 <Tiempo data={data} />
                 
             </div>
