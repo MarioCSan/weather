@@ -46,7 +46,7 @@ const Formulario = () =>{
     useEffect(()=>{
 
         fetchData('madrid')
-    },[])
+    })
 
     return(
         <div className="bg-sky-200">
