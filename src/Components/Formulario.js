@@ -6,19 +6,18 @@ import Tiempo from "./Tiempo";
 const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState({});
+
     const url = Global.forecast 
     const endUrl = '&days=4&lang=es&aqi=no&alerts=no'
-    let index = 0
-  
-    async function fetchData(ciudad) {
+
+    function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
             setData(res.data);
-            console.log(data)
           })
           .catch(err => {
             console.log('')
           });
-      }
+        }
 
 
   
@@ -45,11 +44,10 @@ const Formulario = () =>{
     // }
 
     useEffect(()=>{
-        if (index===0){
-            fetchData('madrid')
-            index++;
-        }
-    })
+        setData(axios.get(url+"madrid"+endUrl).then((res) => {
+            setData(res.data);
+          })   )            
+    }, [url])
 
     return(
         <div className="bg-sky-200">
