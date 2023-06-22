@@ -8,6 +8,7 @@ const Formulario = () =>{
     const [data, setData] = useState({});
     const url = Global.forecast 
     const endUrl = '&days=4&lang=es&aqi=no&alerts=no'
+    let index = 0
   
     async function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
@@ -44,8 +45,10 @@ const Formulario = () =>{
     // }
 
     useEffect(()=>{
-
-        fetchData('madrid')
+        if (index===0){
+            fetchData('madrid')
+            index++;
+        }
     })
 
     return(
