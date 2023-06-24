@@ -6,13 +6,24 @@ import Tiempo from "./Tiempo";
 const Formulario = () =>{
     const [ciudad, setCiudad] = useState('')
     const [data, setData] = useState({});
+    const [localtime, setLocaltime] = useState('');
 
     const url = Global.forecast 
     const endUrl = '&days=4&lang=es&aqi=no&alerts=no'
 
+
+    let bg = ''
     function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
             setData(res.data);
+            setLocaltime(data.location.localtime.substring(11,16).replace(':',''))
+            if(localtime<2100){
+                bg = 'bg-sky-200'
+              } else {
+                bg = 'bg-blue-950'
+              }
+              console.log(bg)
+      
           })
           .catch(err => {
             console.log('')
@@ -46,12 +57,20 @@ const Formulario = () =>{
     useEffect(()=>{
         setData(axios.get(url+"madrid"+endUrl).then((res) => {
             setData(res.data);
+            setLocaltime(res.data.location.localtime.substring(11,16).replace(':',''))
+            if(localtime > 800 && localtime<2100){
+                bg = 'bg-sky-200'
+              } else {
+                bg = 'bg-blue-950'
+              }
+
           })   )            
     }, [url])
 
     return(
-        <div className="bg-sky-200">
-            <div className="p-10 mb-2">
+        
+        <div className={bg}>
+            <div className="p-10">
                 <h1 className='font-extrabold tracking-widest text-2xl text-zinc-800'>Weather</h1>
             </div>
             <div>
@@ -70,7 +89,7 @@ const Formulario = () =>{
                 </form> 
             </div>
             <div className="bg-sky-200">    
-                <Tiempo data={data} />
+                <Tiempo data={data} fondo={bg} />
                 
             </div>
         </div>
