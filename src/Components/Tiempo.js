@@ -25,12 +25,12 @@ const Tiempo = ({ data, localtime }) => {
   function renderNight(){
     
     return (
-      <div key="{00}" className="p-10 m-10 grid grid-cols-1 gap-4 rounded overflow-hidden shadow-lg bg-sky-800 text-sky-50">
+      <div key="{00}" className="p-10 m-10 grid grid-cols-1 gap-4 rounded overflow-hidden shadow-lg bg-indigo-700 text-sky-50">
       <h1 className="text-2xl font-bold">
         Previsión del tiempo en {data.location.name}
       </h1>
       <div className="flex place-content-center">
-        <img src={data.current.condition.icon} alt="icon" width="64" height="64"/>
+        <img src={data.current.condition.icon} alt="icon" width="120" height="120"/>
       </div>
 
       <h2 className="font-bold">{data.current.condition.text}</h2>
@@ -46,7 +46,7 @@ const Tiempo = ({ data, localtime }) => {
     <div >
       {data.location !== undefined && (
         <div>
-          {localtime < 2100 ? renderDay() : renderNight()}
+          {localtime < 2100 && localtime > 800 ? renderDay() : renderNight()}
           
          <div className="">
             <h3 className="text-2xl Font-bold"> Próximos días</h3>
