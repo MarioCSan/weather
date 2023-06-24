@@ -86,7 +86,7 @@ const Formulario = () =>{
       function renderNight(){
         
         return (
-          <div className="bg-blue-700 text-sky-50">
+          <div className="bg-blue-900 text-sky-50">
             <div className="p-10 bg">
               <h1 className="font-extrabold tracking-widest text-2xl ">
                 Weather
