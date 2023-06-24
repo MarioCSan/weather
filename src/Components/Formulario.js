@@ -22,8 +22,6 @@ const Formulario = () =>{
               } else {
                 bg = 'bg-blue-950'
               }
-              console.log(bg)
-      
           })
           .catch(err => {
             console.log('')
@@ -69,11 +67,11 @@ const Formulario = () =>{
 
     return(
         
-        <div className={bg}>
+        <div>
             <div className="p-10">
                 <h1 className='font-extrabold tracking-widest text-2xl text-zinc-800'>Weather</h1>
             </div>
-            <div>
+            <div className={bg}>
                 <form onSubmit={handleSubmit}>
                     <div className="flex place-content-center">
                    
@@ -88,7 +86,7 @@ const Formulario = () =>{
                     />
                 </form> 
             </div>
-            <div className="bg-sky-200">    
+            <div className={bg}>    
                 <Tiempo data={data} fondo={bg} />
                 
             </div>

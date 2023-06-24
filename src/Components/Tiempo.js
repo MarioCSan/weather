@@ -5,7 +5,7 @@ const Tiempo = ({ data, fondo }) => {
   return (
     <div className={fondo}>
       {data.location !== undefined && (
-        <div>
+        <div className={fondo}>
           {data.location.localtime }
           <div key="{00}" className="p-10 m-10 grid grid-cols-1 gap-4 rounded overflow-hidden shadow-lg bg-cyan-400">
             <h1 className="text-2xl font-bold">
