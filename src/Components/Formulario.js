@@ -132,7 +132,7 @@ const Formulario = () =>{
     return(
         
         <div>
-           {localtime < 2100 ? renderDay() : renderNight()}
+           {localtime < 2100 && localtime > 800 ? renderDay() : renderNight()}
         </div>
     )
 }
