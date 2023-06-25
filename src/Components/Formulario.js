@@ -75,28 +75,29 @@ const Formulario = () =>{
       function renderNight(){
         
         return (
-          <div className="bg-blue-900 text-sky-50">
+          <div className="bg-blue-900 text-sky-50 tex-4xl">
             <div className="p-10 bg">
-              <h1 className="font-extrabold tracking-widest text-2xl ">
+              <h1 className="font-extrabold tracking-widest text-2xl" style={{fontSize: 50}}>
                 Weather
               </h1>
             </div>
-            <div className="">
+            <div className="p-10">
               <form onSubmit={handleSubmit}>
                 <div className="flex place-content-center">
                   <input
                     id="ciudad"
                     placeholder="Ciudad"
-                    className="placeholder:italic md:text-center placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
-                                                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv text-zinc-900 p-8 text-"
+                    className="placeholder:italic md:text-center placeholder:text-slate-400 placeholder:text-xl block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
+                                                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv text-zinc-900 p-8 "
                     value={ciudad}
                     onChange={(e) => setCiudad(e.target.value)}
                     onBlur={handleSubmit}
+                    
                   ></input>
                 </div>
                 <input
                   type="submit"
-                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded"
+                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded w-1/3 text-lg"
                 />
               </form>
             </div>
