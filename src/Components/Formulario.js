@@ -41,32 +41,21 @@ const Formulario = () =>{
         }
 
     }
- 
-    // const handleChange = (e) =>{
-    //     e.preventDefault();
-
-    //     if([ciudad].includes('')){
-    //         // ! Error
-    //     } else {
-    //     //    fetchData()
-    //     }
-       
-    // }
 
     function renderDay(){
     
         return (
             <div>
             <div className='p-10'>
-                <h1 className='font-extrabold tracking-widest text-2xl text-zinc-800'>Weather</h1>
+                <h1 className='tracking-widest text-9xl text-zinc-800'>Weather</h1>
             </div>
             <div className=''>
                 <form onSubmit={handleSubmit}>
                     <div className="flex place-content-center">
                    
                         <input id='ciudad' placeholder="Ciudad" 
-                                className="placeholder:italic md:text-center placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
-                                            focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv"
+                                className="placeholder:italic md:text-center placeholder:text-2xl block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
+                                            focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv l"
                                 value={ciudad} onChange={ (e) => setCiudad(e.target.value) } onBlur={handleSubmit}></input>
                     </div>
                     <input
@@ -99,7 +88,7 @@ const Formulario = () =>{
                     id="ciudad"
                     placeholder="Ciudad"
                     className="placeholder:italic md:text-center placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm 
-                                                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv text-zinc-900"
+                                                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-smv text-zinc-900 p-8 text-"
                     value={ciudad}
                     onChange={(e) => setCiudad(e.target.value)}
                     onBlur={handleSubmit}
@@ -107,7 +96,7 @@ const Formulario = () =>{
                 </div>
                 <input
                   type="submit"
-                  className="m-4 p-4 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded"
+                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded"
                 />
               </form>
             </div>
