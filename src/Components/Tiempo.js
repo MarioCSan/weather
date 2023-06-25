@@ -50,11 +50,11 @@ const Tiempo = ({ data, localtime }) => {
 
           <div >
             <h3 className="text-2xl Font-bold"> Próximos días</h3>
-            <div>
+            <div className="lg:grid grid-cols-3 grid-row-2">
               {data.forecast.forecastday.map((item, i) => {
                 return (
-                  <div key={i} className="basis-1/4">
-                    <div className="rounded overflow-hidden shadow-lg p-12 m-6 bg-sky-400  rounded-lg">
+                  <div key={i} className="">
+                    <div className="rounded overflow-hidden shadow-lg p-12 m-4 bg-sky-400  rounded-lg">
                       <div className="flex place-content-center">
                         <img
                           src={item.day.condition.icon}
