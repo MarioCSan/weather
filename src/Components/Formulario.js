@@ -47,7 +47,7 @@ const Formulario = () =>{
         return (
             <div>
             <div className='p-10'>
-                <h1 className='tracking-widest text-9xl text-zinc-800'>Weather</h1>
+                <h1 className='tracking-widest text-5xl md:text-5xl text-zinc-800'>Weather</h1>
             </div>
             <div className=''>
                 <form onSubmit={handleSubmit}>
