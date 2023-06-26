@@ -43,7 +43,7 @@ const Tiempo = ({ data, localtime }) => {
   } 
 
   return (
-    <div>
+    <div className="pb-10">
       {data.location !== undefined && (
         <div>
           {localtime < 2100 && localtime > 800 ? renderDay() : renderNight()}
