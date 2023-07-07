@@ -9,20 +9,12 @@ const Formulario = () =>{
     const [localtime, setLocaltime] = useState('');
 
     const url = Global.forecast 
-    const endUrl = '&days=4&lang=es&aqi=no&alerts=no'
-
-
-    let bg = ''
+    const endUrl = '&days=5&lang=es&aqi=no&alerts=no'
+  
     function fetchData(ciudad) {
         axios.get(url+ciudad+endUrl).then((res) => {
             setData(res.data);
             setLocaltime(res.data.location.localtime.substring(11,16).replace(':',''))
-            if(res.data.location.localtime.substring(11,16).replace(':','')<2100){
-                bg = 'bg-sky-200'
-              } else if(localtime>2100) {
-                bg = 'bg-blue-950'
-              }
-              console.log(bg)
           })
           .catch(err => {
             console.log('')
@@ -46,6 +38,7 @@ const Formulario = () =>{
     
         return (
             <div>
+            
             <div className='p-10'>
                 <h1 className='tracking-widest text-5xl md:text-5xl text-zinc-800'>Weather</h1>
             </div>
