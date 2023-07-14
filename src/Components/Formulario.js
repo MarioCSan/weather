@@ -17,7 +17,7 @@ const Formulario = () =>{
             setLocaltime(res.data.location.localtime.substring(11,16).replace(':',''))
           })
           .catch(err => {
-            console.log('')
+            
           });
         }
 
@@ -40,7 +40,7 @@ const Formulario = () =>{
             <div>
             
             <div className='p-10'>
-                <h1 className='tracking-widest text-5xl md:text-5xl text-zinc-800'>Weather</h1>
+                <h1 className='tracking-widest text-5xl md:text-5xl text-zinc-800 p-4'>El tiempo </h1>
             </div>
             <div className=''>
                 <form onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ const Formulario = () =>{
                     </div>
                     <input
                         type="submit"
-                        className="m-4 p-4 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded"
+                        className="m-4 p-4 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded md:rounded-lg lg:rounded-lg sm:rounded-full"
                     />
                 </form> 
             </div>
@@ -90,7 +90,7 @@ const Formulario = () =>{
                 </div>
                 <input
                   type="submit"
-                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded w-1/3 text-lg"
+                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded w-1/3 text-lg rounded md:rounded-lg lg:rounded-lg sm:rounded-sm"
                 />
               </form>
             </div>

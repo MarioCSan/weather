@@ -2,7 +2,6 @@
 
 const Tiempo = ({ data, localtime }) => {
   function renderDay(){
-    console.log(data)
     return (
       <div key="{00}" className="p-10 m-10 grid grid-cols-1 gap-4 rounded-lg overflow-hidden shadow-lg bg-sky-400 ">
       <h1 className="text-2xl font-bold">
