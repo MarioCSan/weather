@@ -70,8 +70,11 @@ const Formulario = () =>{
         return (
           <div className="bg-blue-900 text-sky-50 tex-4xl">
             <div className="p-10 bg">
-              <h1 className="font-extrabold tracking-widest text-2xl" style={{fontSize: 50}}>
-              El tiempo
+              <h1
+                className="font-extrabold tracking-widest text-2xl"
+                style={{ fontSize: 50 }}
+              >
+                El tiempo
               </h1>
             </div>
             <div className="p-10">
@@ -85,7 +88,6 @@ const Formulario = () =>{
                     value={ciudad}
                     onChange={(e) => setCiudad(e.target.value)}
                     onBlur={handleSubmit}
-                    
                   ></input>
                 </div>
                 <input
