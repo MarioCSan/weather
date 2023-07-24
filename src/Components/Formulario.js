@@ -71,7 +71,7 @@ const Formulario = () =>{
           <div className="bg-blue-900 text-sky-50 tex-4xl">
             <div className="p-10 bg">
               <h1 className="font-extrabold tracking-widest text-2xl" style={{fontSize: 50}}>
-                Weather
+              El tiempo
               </h1>
             </div>
             <div className="p-10">
