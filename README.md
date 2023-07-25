@@ -1,6 +1,9 @@
 # El tiempo / Weather
 [![Deploys by netlify](https://www.netlify.com/img/global/badges/netlify-color-bg.svg)](https://www.netlify.com)
 
+## Objetivo
+Esta app fue creada para ampliar conocimientos sobre TailwindCSS y ReactJS. También sirvio para afianzar conocimientos de React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
