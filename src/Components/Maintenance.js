@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from './vercel.svg'
 
 export default function Maintenance() {
 
@@ -61,14 +60,7 @@ useEffect(() => {
         <br />
         del usuario y cambios en la API para cambiar el origen de los datos.
       </h2>
-      <img
-        src={logo}
-        alt="Vercel Logo"
-        className="dark:invert"
-        width={100}
-        height={24}
-        priority
-      />
+
       <div
         href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
         className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
