@@ -1,13 +1,13 @@
 
 import './App.css';
 
-import Maintenance from '../Components/Maintenance';
+import Formulario from '../Components/Formulario';
 
 function App() {
  
   return (
-    <div>
-      <Maintenance />
+    <div className="text-center bg-sky-200">
+      <Formulario />
     </div>
   );
 }

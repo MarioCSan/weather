@@ -92,7 +92,8 @@ const Formulario = () =>{
                 </div>
                 <input
                   type="submit"
-                  className="m-4 p-4 bg-blue-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100  w-1/3 text-lg rounded md:rounded-lg lg:rounded-lg sm:rounded-sm"
+                  value='buscar'
+                  className="m-4 p-4 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-100 rounded md:rounded-lg lg:rounded-lg sm:rounded-full"
                 />
               </form>
             </div>
