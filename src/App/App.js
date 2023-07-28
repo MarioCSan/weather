@@ -21,6 +21,7 @@ function App() {
           setQuery("");
           formatDate(result.timezone);
           Capitalice(weather.weather[0].description);
+          console.log(weather)
         });
     }
   };
@@ -54,37 +55,51 @@ function App() {
     
   }
   return (
-    <div className={(typeof weather.main != "undefined") ? ((formattedTime > 800 && formattedTime < 2100) ? 'app' : 'app warm') : 'app'}>
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? formattedTime > 800 && formattedTime < 2100
+            ? "app"
+            : "app warm"
+          : "app"
+      }
+    >
       <main>
         <div className="search-box">
-          <input 
+          <input
             type="text"
             className="search-bar"
             placeholder="Buscar ciudad"
-            onChange={e => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyDown={search}
           />
         </div>
-        {(typeof weather.main != "undefined") ? (
-        <div>
-          <div className="location-box">
-            <div className="location">{weather.name}, {weather.sys.country}</div>
-            <div className="date">{dateBuilder(new Date())}</div>
-            <div className='date'>{localtime}</div>
-          </div>
-          <div className="weather-box">
-            <div className="temp">
-              {Math.round(weather.main.temp)}°c
+        {typeof weather.main != "undefined" ? (
+          <div>
+            <div className="location-box">
+              <div className="location">
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className="date">{dateBuilder(new Date())}</div>
+              <div className="date">{localtime}</div>
             </div>
-            <div className="weather">
-              <h2>{weather.weather[0].description}</h2>
-              {/* <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt='Icono del tiempo' className='weather'/> */}
-              
+            <div className="weather-box">
+              <div className="temp">{Math.round(weather.main.temp)}°c</div>
+              <div className="weather">
+                <p> Sensación termica {Math.round(weather.main.feels_like)}°c</p>
+                <p>Viento: {weather.wind.speed} Kmh</p>
+             
+              </div>
+              <div className="weather">
+                <h2>{weather.weather[0].description}</h2>
+                {/* <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt='Icono del tiempo' className='weather'/> */}
+              </div>
             </div>
           </div>
-        </div>
-        ) : ('')}
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );
