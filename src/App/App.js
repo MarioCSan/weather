@@ -20,8 +20,6 @@ function App() {
           setWeather(result);
           setQuery("");
           formatDate(result.timezone);
-          Capitalice(weather.weather[0].description);
-          console.log(weather)
         });
     }
   };
@@ -49,11 +47,6 @@ function App() {
     setLocaltime(cityTime[0])
   }
 
-  const Capitalice = (word) =>{
-    const wordCapitaliced = word.charAt(0).toUpperCase() + word.slice(1);
-    weather.weather[0].description = wordCapitaliced;
-    
-  }
   return (
     <div
       className={
