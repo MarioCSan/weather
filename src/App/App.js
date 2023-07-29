@@ -53,7 +53,7 @@ function App() {
         typeof weather.main != "undefined"
           ? formattedTime > 800 && formattedTime < 2100
             ? "app"
-            : "app warm"
+            : "app night"
           : "app"
       }
     >
@@ -62,7 +62,7 @@ function App() {
           <input
             type="text-blue-600/[.06]"
             className="search-bar"
-            placeholder="Buscar ciudad"
+            placeholder="Buscar ciudad (Ciudad, País)"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyDown={search}

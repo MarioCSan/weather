@@ -20,7 +20,7 @@
     transition: 0.4 ease;
   }
   
-  .app.warm {
+  .app.night {
     /* background-image: url('./assets/warm-bg.jpg'); */
     background-color: rgba(77, 2, 163, 1);
   }
