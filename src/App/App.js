@@ -60,7 +60,7 @@ function App() {
       <main>
         <div className="search-box">
           <input
-            type="text"
+            type="text-blue-600/[.06]"
             className="search-bar"
             placeholder="Buscar ciudad"
             onChange={(e) => setQuery(e.target.value)}
