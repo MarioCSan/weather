@@ -44,7 +44,7 @@ function App() {
     const cityTime = new Date(cityOffset).toTimeString().split(' ')
     const timeFormatted = cityTime[0].substring(0, 5).replace(":", "")
     setFormattedTime(timeFormatted);
-    setLocaltime(cityTime[0])
+    setLocaltime(cityTime[0].substring(0, 5))
   }
 
   return (
